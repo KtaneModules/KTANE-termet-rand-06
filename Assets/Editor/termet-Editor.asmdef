@@ -1,0 +1,10 @@
+{
+  "name": "termet-Editor",
+  "references": [
+    "termet"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
