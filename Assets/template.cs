@@ -9,7 +9,7 @@ using Rnd = UnityEngine.Random;
 
 public class template : MonoBehaviour
 {
-    //public private KMAudio Audio;
+    public KMAudio Audio;
 
     public KMSelectable[] buttons;
     public KMSelectable screen;
@@ -25,6 +25,21 @@ public class template : MonoBehaviour
     private int[] initCoordinate;
     private int pressed = 0;
     private int currentLowestDist = 0;
+
+    private List<string> names = new List<string>()
+    {
+        "Nigiri",
+        "Dumpling",
+        "Pasta",
+        "Maki",
+        "Kiwi",
+        "Oreo",
+        "Apple",
+        "Watermelon",
+        "Raspberry"
+    };
+
+    private string nameInit;
 
 
     private int[] distances = new int[72] { 3, 1, 2, 2, 3, 1, 4, 2, 3, 1, 3, 1, 4, 2, 4, 2, 2, 3, 1, 3, 1, 2, 4, 2, 3, 3, 1, 1, 4, 2, 2, 2, 4, 1, 1, 2, 2, 2, 3, 3, 3, 1, 3, 1, 4, 2, 4, 2, 2, 3, 1, 3, 1, 2, 4, 2, 2, 1, 3, 2, 1, 3, 2, 4, 3, 1, 2, 2, 3, 1, 4, 2 };
@@ -127,6 +142,7 @@ public class template : MonoBehaviour
 
     void press(int n)
     {
+        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, transform);
         if (ModuleSolved) return;
         coordinate[n/2] = mod(coordinate[n/2] + (n%2==0? -1:1) * offsets[n], 9);
         if (!stage) screenMesh.material.mainTexture = cellTextures[grid[coordinate[1] * 9 + coordinate[0]]];
@@ -151,6 +167,7 @@ public class template : MonoBehaviour
 
     void pressScreen()
     {
+        Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, transform);
         if (ModuleSolved) return;
         if (stage)
         {
@@ -176,10 +193,11 @@ public class template : MonoBehaviour
     {
         coordinate[0] = Rnd.Range(0, 8);
         coordinate[1] = Rnd.Range(0, 8);
-        if (coordinate[0] > 4) coordinate[0]++;
-        if (coordinate[1] > 4) coordinate[1]++;
+        if (coordinate[0] > 3) coordinate[0]++;
+        if (coordinate[1] > 3) coordinate[1]++;
         initCoordinate = new int[2] { coordinate[0], coordinate[1] };
-        Debug.LogFormat("[Termet #{0}] New generated coorinates: ({1}, {2})", ModuleId,coordinate[0],coordinate[1]);
+        nameInit = names[grid[coordinate[1] * 9 + coordinate[0]]];
+        Debug.LogFormat("[Termet #{0}] New generated coorinates: ({1}, {2}), which is {3}.", ModuleId,coordinate[0],coordinate[1],nameInit);
     }
 
     void Awake()
@@ -211,7 +229,7 @@ public class template : MonoBehaviour
             yield return "sendtochaterror Сommand is not valid.";
         }
         var commandArgs = Command.ToUpperInvariant();
-        foreach (char i in Command)
+        foreach (char i in commandArgs)
         {
             switch (i)
             {
