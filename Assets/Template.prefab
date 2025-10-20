@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114937448797953234}
   - component: {fileID: 114925785300877996}
   - component: {fileID: 114302603966672388}
-  - component: {fileID: 114352902783079886}
+  - component: {fileID: 114076630236551874}
   m_Layer: 0
   m_Name: Template
   m_TagString: Untagged
@@ -642,6 +642,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114076630236551874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137567616980298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053c53773af9b02428bd209d14361d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio: {fileID: 114947872984060302}
+  buttons:
+  - {fileID: 114258004255797076}
+  - {fileID: 114230752560779248}
+  - {fileID: 114767806141232976}
+  - {fileID: 114717718584681602}
+  screen: {fileID: 114917095213291846}
+  screenMesh: {fileID: 23766124367418188}
+  cellTextures:
+  - {fileID: 2800000, guid: b44814052c48e32488315c414b41fdc8, type: 3}
+  - {fileID: 2800000, guid: cd33fe49444e11e48b3e07e5aa64e7b9, type: 3}
+  - {fileID: 2800000, guid: da670d5bb116f2d47a86e4c967a58f0f, type: 3}
+  - {fileID: 2800000, guid: dcaadc9252b24264b8c07955040a4c19, type: 3}
+  - {fileID: 2800000, guid: 6eaf1899952985a4e9929b2f2188e2ef, type: 3}
+  - {fileID: 2800000, guid: cb4c51cb9610228439f3b392270db48b, type: 3}
+  - {fileID: 2800000, guid: e3e1a9cbb0bde2b4eb5b64d6a5b502b8, type: 3}
+  - {fileID: 2800000, guid: bc21e781a8fb8eb4d8e05e0b9f1566d8, type: 3}
+  - {fileID: 2800000, guid: c2e998f5c19df5844871d8f7f1cd765a, type: 3}
+  - {fileID: 2800000, guid: b7116d513301e1445a142468b288c203, type: 3}
 --- !u!114 &114131473798964468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,36 +741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colorblindMode: 0
---- !u!114 &114352902783079886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1137567616980298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053c53773af9b02428bd209d14361d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Audio: {fileID: 114947872984060302}
-  buttons:
-  - {fileID: 114258004255797076}
-  - {fileID: 114230752560779248}
-  - {fileID: 114767806141232976}
-  - {fileID: 114717718584681602}
-  screen: {fileID: 114917095213291846}
-  screenMesh: {fileID: 23766124367418188}
-  cellTextures:
-  - {fileID: 2800000, guid: b44814052c48e32488315c414b41fdc8, type: 3}
-  - {fileID: 2800000, guid: cd33fe49444e11e48b3e07e5aa64e7b9, type: 3}
-  - {fileID: 2800000, guid: da670d5bb116f2d47a86e4c967a58f0f, type: 3}
-  - {fileID: 2800000, guid: dcaadc9252b24264b8c07955040a4c19, type: 3}
-  - {fileID: 2800000, guid: 6eaf1899952985a4e9929b2f2188e2ef, type: 3}
-  - {fileID: 2800000, guid: cb4c51cb9610228439f3b392270db48b, type: 3}
-  - {fileID: 2800000, guid: e3e1a9cbb0bde2b4eb5b64d6a5b502b8, type: 3}
-  - {fileID: 2800000, guid: bc21e781a8fb8eb4d8e05e0b9f1566d8, type: 3}
-  - {fileID: 2800000, guid: c2e998f5c19df5844871d8f7f1cd765a, type: 3}
-  - {fileID: 2800000, guid: b7116d513301e1445a142468b288c203, type: 3}
 --- !u!114 &114521066662678896
 MonoBehaviour:
   m_ObjectHideFlags: 1

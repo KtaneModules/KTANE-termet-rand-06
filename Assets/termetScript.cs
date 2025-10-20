@@ -7,7 +7,7 @@ using UnityEngine;
 using KModkit;
 using Rnd = UnityEngine.Random;
 
-public class template : MonoBehaviour
+public class termetScript : MonoBehaviour
 {
     public KMAudio Audio;
 
@@ -219,11 +219,12 @@ public class template : MonoBehaviour
     }
 
 #pragma warning disable 414
-    private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
+    private readonly string TwitchHelpMessage = @"Use !{0} U/L/R/D/S to press up/left/right/down/screen.";
 #pragma warning restore 414
 
     IEnumerator ProcessTwitchCommand(string Command)
     {
+        yield return null;
         if (!Command.RegexMatch("[ULRDSulrds]+"))
         {
             yield return "sendtochaterror Сommand is not valid.";
@@ -233,10 +234,10 @@ public class template : MonoBehaviour
         {
             switch (i)
             {
-                case 'U': { press(0); break; }
-                case 'D': { press(1); break; }
-                case 'L': { press(2); break; }
-                case 'R': { press(3); break; }
+                case 'U': { press(2); break; }
+                case 'D': { press(3); break; }
+                case 'L': { press(0); break; }
+                case 'R': { press(1); break; }
                 case 'S': { pressScreen(); break; }
             }
         }
@@ -245,6 +246,7 @@ public class template : MonoBehaviour
 
     IEnumerator TwitchHandleForcedSolve()
     {
+        yield return null;
         coordinate[0] = 4;
         coordinate[1] = 4;
         GetComponent<KMBombModule>().HandlePass();
